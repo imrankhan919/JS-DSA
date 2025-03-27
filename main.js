@@ -322,3 +322,149 @@
 // e. dice2: The value of the second dice (a random number between 1 and 6).
 // f. sum: The sum of the two dice values.
 // g. result: The result of the roll, which can be "win", "lose", or "roll again"
+
+// const rollDice = () => {
+//   return Math.floor(Math.random() * 6) + 1;
+// };
+
+// const diceGameSimulation = (numSimulation) => {
+//   const results = [];
+
+//   for (let i = 0; i < numSimulation; i++) {
+//     const diceOne = rollDice();
+//     const diceTwo = rollDice();
+//     const sum = diceOne + diceTwo;
+
+//     let result = "";
+
+//     if (sum === 7 || sum === 11) {
+//       result = "winner";
+//     } else if (sum === 2 || sum === 3 || sum === 12) {
+//       result = "loser";
+//     } else {
+//       result = "roll again";
+//     }
+
+//     results.push({ diceOne, diceTwo, sum, result });
+//   }
+
+//   return results;
+// };
+
+// const result = diceGameSimulation(10);
+// console.table(result);
+
+// 16. Write a function called formatPhoneNumber that takes in an
+// array of numbers and returns a string representing
+// the phone number formed by concatenating the numbers
+// in the specified format.
+
+// const formatPhoneNumber = (numbers) => {
+//   const areaCode = numbers.slice(0, 3).join("");
+//   const prefix = numbers.slice(3, 6).join("");
+//   const lineNumber = numbers.slice(6).join("");
+
+//   return `(${areaCode})-${prefix}-${lineNumber}`;
+// };
+
+// function formatPhoneNumber(numbers) {
+//     const formatted = numbers.join('');
+//     return `(${formatted.substring(0, 3)}) ${formatted.substring(
+//       3,
+//       6
+//     )}-
+
+// const result = formatPhoneNumber([9, 8, 9, 3, 7, 2, 1, 9, 2, 0]);
+// console.log(result);
+// (989) - 372 - 1920;
+
+// 17. Write a function called validateEmail that takes in a
+// string and returns whether the string is a valid email
+// address. For the purposes of this challenge,
+// a valid email address is defined as a string that contains an @
+// symbol and a . symbol
+
+// function validateEmail(email) {
+//   if (email.indexOf("@") === -1) {
+//     return false;
+//   }
+
+//   const [localPart, domain] = email.split("@");
+//   if (localPart.length === 0 || domain.length < 3) {
+//     return false;
+//   }
+
+//   const domainExtension = domain.split(".");
+
+//   if (
+//     domainExtension.length < 2 ||
+//     domainExtension[domainExtension.length - 1].length < 2
+//   ) {
+//     return false;
+//   }
+
+//   return true;
+// }
+
+// const result = validateEmail("imran@gmail.com");
+// console.log(result);
+
+// 18.  Write a function called sumOfEvenSquares that takes an
+// array of numbers and returns the sum of the
+// squares of the even numbers in the array
+
+// const sumOfEvenSquares = (numbers) => {
+//   const evenSquares = numbers
+//     .filter((num) => num % 2 == 0)
+//     .map((num) => num ** 2);
+
+//   return evenSquares.reduce((p, c) => p + c, 0);
+// };
+
+// const result = sumOfEvenSquares([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+// console.log(result);
+
+// 19.  Given a string of words, you need to find the highest
+// scoring word. Each letter of a word scores points
+// according to its position in the
+// alphabet: a = 1, b = 2, c = 3, and so on.
+// a. You need to return the highest scoring word as a string.
+// b. If two words score the same, return the word that appears
+// earliest in the original string.
+// c. All letters will be lowercase and all inputs will be valid.
+
+// const highestSchoringWord = (str) => {
+//   const words = str.split(" ");
+
+//   const scores = words.map((word) => {
+//     let score = 0;
+
+//     for (let letter of word) {
+//       score += letter.charCodeAt(0) - 96;
+//     }
+
+//     return score;
+//   });
+
+//   let highestScore = 0;
+//   let highestIndex = 0;
+
+//   for (let i = 0; i < scores.length; i++) {
+//     if (scores[i] > highestScore) {
+//       highestScore = scores[i];
+//       highestIndex = i;
+//     }
+//   }
+
+//   return words[highestIndex];
+// };
+
+// const result = highestSchoringWord("my name is jatin");
+// console.log(result);
+
+// 20.  Write a function called validAnagrams that takes in two
+// strings and determines whether they are valid
+// anagrams of each other. An anagram is a word
+// or phrase formed by rearranging the letters of
+// a different word or phrase, typically using all
+// the original letters exactly once.
