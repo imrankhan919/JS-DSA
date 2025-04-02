@@ -468,3 +468,125 @@
 // or phrase formed by rearranging the letters of
 // a different word or phrase, typically using all
 // the original letters exactly once.
+
+// Recursion
+
+// Recursion vs iteration
+// At first glance, recursion and iteration (loops) seem to be very similar. They both can be used to solve the same
+// problems, but there are some differences between them. There are also pros and cons to both.
+// As we've established, recursion is a function that calles itself until a base case is met and solves a smaller version
+// of the same problem, while iteration is just a block of code that is executed a specific number of times.
+// When using recursion, you're adding function calls to the call stack and that takes up memory and can affect
+// performance. Iteration doesn't because you aren't adding function instances. So that's one pro for iteration over
+// recursion.
+// However, recursion can really minimize the amount of code needed and can be a very elegant solution and
+// minimize complex problems.
+// Both recursion and iteration have their strengths and weaknesses, and the choice between them depends on the
+// problem you're trying to solve and the code readability and efficiency you're aiming for.
+// When to use which
+// This really depends on the problem, the developer and many other factors, but in general:
+// • Use recursion when the problem can be broken down into smaller instances of the same problem and you
+// have a clear base case. Recursion is often used for problems that have a natural recursive structure, like
+// traversing trees or finding combinations.
+// • Use iteration when you need to repeat a block of code a specific number of times or until a condition is
+// met. Iteration is generally simpler to implement and understand for simpler repetitive tasks.
+
+// 21. Write a countDown function which takes
+// number as an argument and return
+// the reverse countdown to zero
+
+// const countDown = (num) => {
+//   // Base Case
+//   if (num <= 0) {
+//     console.log("All Done");
+//     return;
+//   }
+
+//   // Recursive Case
+//   console.log(num);
+//   num--;
+//   countDown(num);
+// };
+
+// countDown(10);
+
+// const recur = () => {
+//   recur();
+// };
+
+// recur();
+
+// Recursive Unwinding
+// 22. write a function name supUpTo which takes number as an argument and sum up all to 0
+
+// function sumUpTo(n) {
+//   if (n === 1) {
+//     console.log(`sumUpTo(${n}) returns 1`);
+//     return 1;
+//   }
+
+//   console.log(`sumUpTo(${n}) calls sumUpTo(${n - 1}) + ${n}`);
+//   const result = n + sumUpTo(n - 1);
+//   console.log(`sumUpTo(${n}) returns ${result}`);
+//   return result;
+// }
+
+// const result = sumUpTo(5);
+// console.log(result);
+
+// 23. Write a function called reverseString that
+// takes in a string and returns the reversed version
+// of the string.
+// Be sure to use recursion in your solution.
+
+// const reverseString = (str) => {
+//   if (str === "") {
+//     return "";
+//   }
+
+//   console.log(str.substr(1) + str.charAt(0));
+
+//   return reverseString(str.substr(1)) + str.charAt(0);
+// };
+
+// const reverseString = (str) =>
+//   str === "" ? "" : reverseString(str.substr(1)) + str.charAt(0);
+
+// const result = reverseString("cat");
+// console.log(result);
+
+// 24. Write a function called fibonacci
+// that takes in a number and returns the number
+// at that index of the Fibonacci sequence.
+// function fibonacci(num) {
+
+// const fibonacci = (num) => {
+//   // Base Case
+//   if (num < 2) return num;
+
+//   // Recursive Case
+//   return fibonacci(num - 1) + fibonacci(num - 2);
+// };
+
+// const result = fibonacci(3);
+// console.log(result);
+
+// 25. Write a function called factorial
+// that takes in a number and
+// returns the factorial of that number.
+
+// const factorial = (num) => {
+//   if (num === 0 || num === 1) {
+//     return 1;
+//   }
+//   console.log(num);
+//   return num * factorial(num - 1);
+// };
+
+// const result = factorial(5);
+// console.log(result);
+
+// 26. Write a function called power that takes in a
+// base and an exponent and returns the result
+//  of raising the base to the power of the exponent.
+// Use recursion to solve this problem.
