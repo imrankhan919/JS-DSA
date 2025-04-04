@@ -590,3 +590,78 @@
 // base and an exponent and returns the result
 //  of raising the base to the power of the exponent.
 // Use recursion to solve this problem.
+
+// const power = (base, exponent) => {
+//   if (exponent === 0) {
+//     return 1;
+//   } else {
+//     return base * power(base, exponent - 1);
+//   }
+// };
+
+// const result = power(5, 2);
+// console.log(result);
+
+// 27 . Write a function called arraySum that takes
+// in an array of numbers and returns
+// their sum using recursion.
+
+// const arraySum = (arr) => {
+//   if (arr.length === 0) {
+//     return 0;
+//   } else {
+//     return arr[0] + arraySum(arr.slice(1));
+//   }
+// };
+
+// const result = arraySum([1, 2, 3, 4, 5]);
+// console.log(result);
+
+// 28. Write a function called flattenArray that
+// takes in an array containing nested
+// arrays of integers and returns a new array
+// with all the integers from the
+// nested arrays flattened into a single level.
+
+// const flattenArray = (arr) => {
+//   let result = [];
+
+//   for (let item of arr) {
+//     if (Array.isArray(item)) {
+//       result = result.concat(flattenArray(item));
+//     } else {
+//       result.push(item);
+//     }
+//   }
+
+//   return result;
+// };
+
+// const result = flattenArray([1, [2, 3], [4, [5, 6]], 7]);
+// console.log(result);
+
+// 29. Write a function called permutations that
+// takes in a string as a parameter and returns
+// an array of all possible
+// permutations of the characters in the string.
+
+// 30. "Write a recursive function called
+// numberRange that takes two numbers,
+// startNum and endNum, and returns
+// an array containing all numbers
+// from startNum to endNum in sequential order."
+
+// const numberRange = (startNum, endNum) => {
+//   if (startNum === endNum) {
+//     return [startNum];
+//   }
+
+//   const numbers = numberRange(startNum, endNum - 1);
+//   numbers.push(endNum);
+//   return numbers;
+// };
+
+// const result = numberRange(1, 10);
+// console.log(result);
+
+// Space Time Complexity
