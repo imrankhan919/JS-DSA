@@ -665,3 +665,111 @@
 // console.log(result);
 
 // Space Time Complexity
+
+// 31. /*
+// Example of constant time O(1)
+// Constant time means that the time required to complete a
+// function is the same regardless of the size of the input
+// data set.
+// */
+
+// function accessElement(arr, index) {
+//   return arr[index];
+// }
+
+// const arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.time("Access Element 1");
+// console.log(accessElement(arr1, 2));
+// console.timeEnd("Access Element 1");
+
+// const arr2 = Array.from({ length: 1000000 }, (_, index) => index + 1);
+
+// console.time("Access Element 2");
+// console.log(accessElement(arr2, 100));
+// console.timeEnd("Access Element 2");
+
+/*
+  Linear Time O(n)
+  32. Linear time means that the time required to complete a 
+  function is directly proportional to the size of the input 
+  data set.
+*/
+
+// function sumArray(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+//   return sum;
+// }
+
+// const arr1 = [1, 2, 3, 4, 5];
+// console.time("Sum Array 1");
+// sumArray(arr1);
+// console.timeEnd("Sum Array 1");
+
+// const arr2 = Array.from({ length: 10000000 }, (_, index) => index + 1);
+
+// console.time("Sum Array 2");
+// sumArray(arr2);
+// console.timeEnd("Sum Array 2");
+
+/*
+Quadradic Time O(n^2)
+33 . Quadradic time means that the time required to complete a 
+function is proportional to the square of the input data set.
+*/
+
+// function sumArray(arr) {
+//   let sum = 0;
+//   let sum2 = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//     for (let j = 0; j < arr.length; j++) {
+//       sum2 += arr[j];
+//     }
+//   }
+//   return sum + sum2;
+// }
+
+// const arr1 = [1, 2, 3, 4, 5];
+// console.time("Sum Array 1");
+// sumArray(arr1);
+// console.timeEnd("Sum Array 1");
+
+// const arr2 = Array.from({ length: 100 }, (_, index) => index + 1);
+
+// console.time("Sum Array 2");
+// sumArray(arr2);
+// console.timeEnd("Sum Array 2");
+
+/*
+Logarithmic Time (O(log n))
+
+34. Logarithmic time means that the time required to 
+complete a function is proportional to the logarithm 
+of the input data set. 
+
+*/
+
+function findPower(base, exponent) {
+  if (exponent === 0) {
+    return 1;
+  }
+
+  if (exponent % 2 === 0) {
+    const halfPower = findPower(base, exponent / 2);
+    return halfPower * halfPower;
+  } else {
+    const halfPower = findPower(base, (exponent - 1) / 2);
+    return base * halfPower * halfPower;
+  }
+}
+
+console.time("Find Power 1");
+findPower(2, 100);
+console.timeEnd("Find Power 1");
+
+console.time("Find Power 2");
+findPower(2, 1000000000);
+console.timeEnd("Find Power 2");
