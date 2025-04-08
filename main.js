@@ -752,24 +752,88 @@ of the input data set.
 
 */
 
-function findPower(base, exponent) {
-  if (exponent === 0) {
-    return 1;
-  }
+// function findPower(base, exponent) {
+//   if (exponent === 0) {
+//     return 1;
+//   }
 
-  if (exponent % 2 === 0) {
-    const halfPower = findPower(base, exponent / 2);
-    return halfPower * halfPower;
-  } else {
-    const halfPower = findPower(base, (exponent - 1) / 2);
-    return base * halfPower * halfPower;
-  }
-}
+//   if (exponent % 2 === 0) {
+//     const halfPower = findPower(base, exponent / 2);
+//     return halfPower * halfPower;
+//   } else {
+//     const halfPower = findPower(base, (exponent - 1) / 2);
+//     return base * halfPower * halfPower;
+//   }
+// }
 
-console.time("Find Power 1");
-findPower(2, 100);
-console.timeEnd("Find Power 1");
+// console.time("Find Power 1");
+// findPower(2, 100);
+// console.timeEnd("Find Power 1");
 
-console.time("Find Power 2");
-findPower(2, 1000000000);
-console.timeEnd("Find Power 2");
+// console.time("Find Power 2");
+// findPower(2, 1000000000);
+// console.timeEnd("Find Power 2");
+
+// Maps
+
+const nameMap = new Map([
+  [1, "Priyanshu"],
+  [2, "Jatin"],
+  [3, "Yasir"],
+  [4, "Gopal"],
+]);
+
+// console.log(nameMap);
+
+const myFunc = () => {};
+const emptyObj = {};
+
+const map2 = new Map([
+  ["name", "Kiran"],
+  [1, "number one"],
+  [true, "really true"],
+  [myFunc, "empty function"],
+  [emptyObj, "empty object"],
+]);
+
+// console.log(map2);
+
+// Getting Values
+// console.log(nameMap.get(1));
+// console.log(map2.get(myFunc));
+// console.log(map2.get(emptyObj));
+
+// Setting Values
+// nameMap.set(4, "Muskan");
+// nameMap.set(5, "Ankita");
+
+// console.log(nameMap);
+
+// Check Values
+// console.log(nameMap.has(1));
+// console.log(nameMap.has(6));
+
+// Deleting Values
+// nameMap.delete(1);
+// console.log(nameMap.has(1));
+
+// Get Size
+// console.log(nameMap.size);
+
+// Iterating (for...of)
+// for (let [key, value] of nameMap) {
+//   console.log(key, value);
+// }
+
+// Using forEach
+// nameMap.forEach((value, key) => {
+//   console.log(key, value);
+// });
+
+// looping keys and values
+// console.log(nameMap.keys());
+// console.log(nameMap.values());
+
+// clearing
+// nameMap.clear();
+// console.log(nameMap);
