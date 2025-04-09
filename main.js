@@ -837,3 +837,138 @@ const map2 = new Map([
 // clearing
 // nameMap.clear();
 // console.log(nameMap);
+
+// 35. Write a program to return word frequency in sentanve using map data structure
+
+// let sentance =
+//   "The quick brown fox jumps over the lazy dog. The dog barks, and the fox runs away.";
+
+// function wordFrequencyCounter(str, char) {
+//   // Convert the string to lowercase and split it into an array of words
+//   const words = str.toLowerCase().split(/\W+/);
+
+//   // Create an empty map to store word frequencies
+//   const wordFrequency = new Map();
+
+//   // Loop through each word in the array
+//   for (let word of words) {
+//     // Ignoee empty strings (caused by multiple spaces or punctuation marks)
+//     if (word === "") continue;
+//     // If the word is already in the map, increment its frequency
+//     if (wordFrequency.has(word)) {
+//       wordFrequency.set(word, wordFrequency.get(word) + 1);
+//     } else {
+//       // If the word is not in the map, add it with a frequency of 1
+//       wordFrequency.set(word, 1);
+//     }
+//   }
+
+//   return wordFrequency.get(char);
+// }
+
+// const result = wordFrequencyCounter(sentance, "quick");
+// console.log(result);
+
+// 36. phoneNumberDirectory Lookup Using Map
+
+// const phoneNumbers = [
+//   "John:123-456-7890",
+//   "Jane:987-654-3210",
+//   "Joe:555-555-5555",
+// ];
+
+// function phoneNumberDirectory(phoneNumbers) {
+//   // Create a new Map object
+//   const directory = new Map();
+
+//   // Loop through each entry in the phoneNumbers array
+//   for (const entry of phoneNumbers) {
+//     // Split the entry into a name and phone number
+//     const [name, phoneNumber] = entry.split(":");
+//     //  Add the name and phone number to the directory
+//     directory.set(name, phoneNumber);
+//   }
+
+//   // Return the directory
+//   return directory;
+// }
+
+// const result = phoneNumberDirectory(phoneNumbers);
+// console.log(result.get("John"));
+
+// Set Data Structure
+const nameSet = new Set(["Pankaj", "Jatin", "Yasir", "Aditya", "Aditya"]);
+
+// Adding Data
+
+nameSet.add("Priyanshu");
+nameSet.add("Harsh");
+
+// Check Value
+// console.log(nameSet.has("Harsh"));
+
+// Delete Value
+nameSet.delete("Priyanshu");
+
+// Getting Size of set
+// console.log(nameMap.size);
+
+// Getting all values
+// console.log(nameSet.values());
+
+// Loop Through set
+// for (const value of nameSet) {
+//   console.log(value);
+// }
+
+// Convert a Set to an Array
+// const namesArray = Array.from(nameSet);
+// console.log(namesArray);
+
+// Convert Array to a Set
+// const nameSetConverted = new Set(namesArray);
+// console.log(nameSetConverted);
+
+// Deleting all data from set
+// nameSet.clear();
+
+// console.log(nameSet);
+
+// 37. Write a function called `symmetricDifference` that takes
+// in two arrays and returns an array containing the symmetric
+// difference of the two arrays. The symmetric difference of
+// two arrays is a new array containing only the elements that
+// are present in one of the arrays but not both, with no duplicates.
+
+function symmetricDifference(arr1, arr2) {
+  // Create a set from arr1 and arr2
+  const set1 = new Set(arr1);
+  const set2 = new Set(arr2);
+  // Create a result array
+  const result = [];
+
+  // Iterate through arr1 and check if the current number is not in set2
+  for (const num of arr1) {
+    if (!set2.has(num)) {
+      // If it is not in set2, push it to the result array
+      result.push(num);
+    }
+  }
+
+  // Iterate through arr2 and check if the current number is not in set1
+  for (const num of arr2) {
+    // If it is not in set1, push it to the result array
+    if (!set1.has(num)) {
+      result.push(num);
+    }
+  }
+
+  // Return the result array
+  return result;
+}
+
+const result = symmetricDifference(
+  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+);
+console.log(result);
